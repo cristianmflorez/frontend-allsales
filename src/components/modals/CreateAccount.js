@@ -24,7 +24,7 @@ function CreateAccount(params) {
       formData.set('image', data.image[0]);
       formData.set('description', data.description);
 
-      await fetch('http://localhost:3001/profile/', {method: 'POST', body:formData})
+      await fetch('https://bored-dog-bandanna.cyclic.app/profile/', {method: 'POST', body:formData})
       .then(response => response.json())
       .then(data => {
         console.log(data)
