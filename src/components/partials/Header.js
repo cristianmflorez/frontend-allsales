@@ -81,14 +81,14 @@ function Header(params) {
                         </Form>
                         
                     </Nav>
-                    <Nav.Link href='#' className="my-0 m-auto text-light fs-4">
+                    <Nav.Link href='#' className="mb-2 ms-auto text-light fs-4">
                         <Cart
                             updateCart={params.updateCart}
                             lastCartUpdate={params.lastCartUpdate}
                         />
                     </Nav.Link>
                     {!user && <Nav className={`ms-auto`}>
-                        <Nav.Link href='#'><CreateAccount/></Nav.Link>
+                        <CreateAccount href='#'/>
                         <Nav.Link href='#'><Login/></Nav.Link>
                     </Nav>}
                     {user[1] && <Nav className={`ms-auto`}>

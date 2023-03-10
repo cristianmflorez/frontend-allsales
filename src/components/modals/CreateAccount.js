@@ -40,7 +40,7 @@ function CreateAccount(params) {
 
     return (
         <>
-        <Button variant="dark" onClick={handleShow} className='m-0'>
+        <Button variant="dark" onClick={handleShow} className='me-auto '>
             Crear cuenta
         </Button>
 
