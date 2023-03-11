@@ -20,7 +20,7 @@ function Header(params) {
 
     useEffect(()=>{
         if(document.cookie){
-            fetch(`http://localhost:3001/profile/`,{method: 'GET', credentials:'include'})
+            fetch(`https://web-production-009b.up.railway.app/profile/`,{method: 'GET', credentials:'include'})
             .then(response => response.json())
             .then(data => {
                 setId(data.id);
