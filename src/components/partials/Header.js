@@ -19,7 +19,7 @@ function Header(params) {
     const [id, setId] = useState ([]);
 
     useEffect(()=>{
-        if(document.cookie){
+        
             fetch(`https://web-production-009b.up.railway.app/profile/`,{method: 'GET', credentials:'include'})
             .then(response => response.json())
             .then(data => {
@@ -27,7 +27,7 @@ function Header(params) {
                 console.log(data.id);
             })
             .catch(error => console.log(error));
-        }
+        
         setUser(document.cookie);
     }, [])
 
