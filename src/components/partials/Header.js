@@ -24,6 +24,7 @@ function Header(params) {
             .then(response => response.json())
             .then(data => {
                 setId(data.id);
+                console.log(data.id);
             })
             .catch(error => console.log(error));
         }
