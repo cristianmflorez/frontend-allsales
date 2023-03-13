@@ -15,7 +15,7 @@ function Profile(params) {
 
     
     useEffect(()=> {
-        fetch(`https://web-production-009b.up.railway.app/profile/${id}`,{method: 'GET', credentials:'include'})
+        fetch(`https://backend-allsales.vercel.app/profile/${id}`,{method: 'GET', credentials:'include'})
             .then(response => response.json())
             .then(data => {
                 if(data.statusCode===404){
