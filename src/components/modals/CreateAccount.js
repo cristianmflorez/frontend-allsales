@@ -21,7 +21,7 @@ function CreateAccount(params) {
       formData.set('name', data.name);
       formData.set('email', data.email);
       formData.set('password', data.password);
-      formData.set('image', data.image[0]);
+      //formData.set('image', data.image[0]);
       formData.set('description', data.description);
 
       await fetch('https://backend-allsales.vercel.app/profile/', {method: 'POST', body:formData})
