@@ -92,11 +92,7 @@ function CreateAccount(params) {
 
             <Form.Group controlId="formFileSm" className="mb-3">
                 <Form.Label>Foto de perfil</Form.Label>
-                <Form.Control type="file" size="sm" {...register('image', {
-                      required: false,
-                      validate: {
-                        acceptedFormats: files => ['image/jpeg', 'image/png', 'image/jpg'].includes(files[0]?.type)||'Only PNG, JPEG o JPG'}
-                    })}/>
+                <Form.Control type="file" size="sm" {...register('image')}/>
                     {(errors.image?.type === 'required') && <p className="text-danger">Campo obligatorio</p>}
                     {(errors.image?.message) && <p className="text-danger">La imagen debe ser formato JPG, JPEG o PNG</p>}
             </Form.Group>
