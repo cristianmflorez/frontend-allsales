@@ -21,7 +21,7 @@ function Header(params) {
     useEffect(()=>{
         console.log("Header");
         if(document.cookie){
-            fetch(`https://web-production-009b.up.railway.app/profile/`,{method: 'GET', credentials:'include'})
+            fetch(`https://backend-allsales.vercel.app/profile/`,{method: 'GET', credentials:'include'})
             .then(response => response.json())
             .then(data => {
                 setId(data.id);

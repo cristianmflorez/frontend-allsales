@@ -21,7 +21,7 @@ function CreateAccount(params) {
       formData.set('name', data.name);
       formData.set('email', data.email);
       formData.set('password', data.password);
-      //formData.set('image', data.image[0]);
+      formData.set('image', data.image[0]);
       formData.set('description', data.description);
 
       await fetch('https://backend-allsales.vercel.app/profile/', {method: 'POST', body:formData})
@@ -92,7 +92,11 @@ function CreateAccount(params) {
 
             <Form.Group controlId="formFileSm" className="mb-3">
                 <Form.Label>Foto de perfil</Form.Label>
-                <Form.Control type="file" size="sm" {...register('image')}/>
+                <Form.Control type="file" size="sm" {...register('image', {
+                      required: true,
+                      validate: {
+                        acceptedFormats: files => ['image/jpeg', 'image/png', 'image/jpg'].includes(files[0]?.type)||'Only PNG, JPEG o JPG'}
+                    })}/>
                     {(errors.image?.type === 'required') && <p className="text-danger">Campo obligatorio</p>}
                     {(errors.image?.message) && <p className="text-danger">La imagen debe ser formato JPG, JPEG o PNG</p>}
             </Form.Group>
